@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Download";
+    Layout = "~/Views/Shared/UerZoneMasterLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        All Files
+    </div>
+    <div class="col-4"></div>
+</div>
+
+<div>
+        <table border="1" style="width: 100%;">
+    <tr style="font-size:22px;background:#ffd800;">
+        <th>File no.</th>
+        <th>file</th>
+         <th>File Type</th>
+        <th>Upalod Date</th>
+        <th>Download</th>
+       
+    </tr>
+    @using ProgrammerAdd.Models;
+    @{
+        ConnectionManager cm = new ConnectionManager();
+        string command = "select * from TBL_Down";
+        System.Data.DataTable dt = cm.GetBulksRecord(command);
+        if(dt.Rows.Count>0)
+        {
+            for(int i=0;i<dt.Rows.Count;i++)
+            {
+        <tr>
+        <td>@dt.Rows[i][0].ToString()</td>
+            <td>@dt.Rows[i][1].ToString()</td>
+            <td>@dt.Rows[i][2].ToString()</td>
+            <td>@dt.Rows[i][3].ToString()</td>
+            <td><a href="/Admin/delete?dt=@dt.Rows[i][2].ToString()">click here</a></td>
+       
+      
+       </tr>
+            }
+        }
+    }
+   
+</table>
+    </div>

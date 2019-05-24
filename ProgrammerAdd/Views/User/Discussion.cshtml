@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Discussion";
+    Layout = "~/Views/Shared/UerZoneMasterLayout.cshtml";
+}
+
+    <div class="col-sm-12 pannel-body"style="min-height:700px;background:#baafaf;">
+        <div class="col-sm-7" style="border:1px solid;margin-top:15px;">
+             @using ProgrammerAdd.Models;
+        @{
+            ConnectionManager cm = new ConnectionManager();
+            string command = "select *from TBL_question";
+            System.Data.DataTable dt = cm.GetBulksRecord(command);
+            if(dt.Rows.Count>0)
+            {
+             
+                for(int i=0;i<dt.Rows.Count;i++)
+                {
+                  <p style="font-size:25px;">Q @(i+1). @dt.Rows[i][1].ToString()
+                      <a href="/User/GiveAnswer?aid=@dt.Rows[i][0].ToString()">Click Here</a>
+                  </p>
+                   
+                }
+            }
+        }
+        </div>
+    <div class="col-sm-5"style="margin-top:15px;padding-left:45px;">
+       
+         <form action="/User/Discussion" method="post">
+
+                 Give Question:
+                <input type="text" name="txtmsg" class="form-control" placeholder="Type your Question...." style="height:100px;" />
+                <br />
+                
+                <input type="submit" value="Send" class="btn btn-success" style="width:90px;"/>
+
+             </form>
+    </div>
+
+  </div>
+   
+
+  
+
+

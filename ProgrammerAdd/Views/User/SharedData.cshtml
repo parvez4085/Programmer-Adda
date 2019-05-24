@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "SharedData";
+    Layout = "~/Views/Shared/UerZoneMasterLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <form action="../User/SharedData" method="post">
+<input type="file" class="form-control" name="txtfile"/><br />
+            <select name="txttype">
+                <option>C</option>
+                <option>C++</option>
+                <option>C#</option>
+                <option> Code java</option>
+                <option>Advans java</option>
+                <option>Javascript</option>
+                <option>Data Stracture</option>
+                <option>pythan</option>
+                <option>.Net</option>
+                <option>PHP</option>
+            </select><br />
+            <input type="submit" class="btn btn-success" value="Post" style="width:90px;"/>
+            </form>
+    </div>
+    </div>

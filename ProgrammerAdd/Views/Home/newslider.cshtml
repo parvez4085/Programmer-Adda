@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "newslider";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+  <script>
+function changeImage(im)
+{
+ 
+    document.getElementById("image1").src=im.src;
+    im.style="cursor:pointer";
+    im.title="put mouse image and display into div";
+}
+    </script>
+<div class="row">
+<div class="col-lg-12">
+
+<img id="image1" src="~/Content/image/b2.jpg" alt="..." style="height:500px;width:100%"/>
+</div>
+</div>
+
+ <div class="row">
+              
+            <!--Coding for Slider -->
+               
+            <div class="col-sm-12 Slider">
+                <div class="row">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+ 
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+   
+    <div class="item">
+       
+            <div class="col-sm-3">
+                <img src="~/Content/ImgGallery/Gallrey1.png" alt="..." style="height:500px;width:100%" onmouseover="changeImage(this)"/>
+       
+      <div class="carousel-caption">
+      </div>
+            </div>
+            <div class="col-sm-3">
+                <img src="~/Content/ImgGallery/Gallrey2.1.png" alt="..." style="height:500px;width:100%" onmouseover="changeImage(this)"/>
+       
+      <div class="carousel-caption">
+      </div>
+            </div>
+            <div class="col-sm-3">
+                <img src="~/Content/ImgGallery/Gallrey2.png" alt="..." style="height:500px;width:100%" onmouseover="changeImage(this)"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div>
+            <div class="col-sm-3">
+                <img src="~/Content/ImgGallery/Gallrey3.3.png" alt="..." style="height:500px;width:100%" onmouseover="changeImage(this)"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div>
+        </div>
+      
+   
+      <div class="item">
+      <div class="col-sm-3">
+                <img src="~/Content/image/b2.jpg" alt="..." style="height:500px;width:100%"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div>
+           <div class="col-sm-3">
+                <img src="~/Content/image/b2.jpg" alt="..." style="height:500px;width:100%"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div>
+           <div class="col-sm-3">
+                <img src="~/Content/image/b2.jpg" alt="..." style="height:500px;width:100%"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div>
+           <div class="col-sm-3">
+                <img src="~/Content/image/b2.jpg" alt="..." style="height:500px;width:100%"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div>
+    </div>
+      <div class="item active">
+       <div class="col-sm-3">
+                <img src="~/Content/image/b2.jpg" alt="..." style="height:500px;width:100%"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div> <div class="col-sm-3">
+                <img src="~/Content/image/b2.jpg" alt="..." style="height:500px;width:100%"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div> <div class="col-sm-3">
+                <img src="~/Content/image/b2.jpg" alt="..." style="height:500px;width:100%"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div> <div class="col-sm-3">
+                <img src="~/Content/image/b2.jpg" alt="..." style="height:500px;width:100%"/>
+       
+      <div class="carousel-caption">
+        
+      </div>
+            </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+             </div>
+                </div>
+         
+              <!--- End Silder Code -->
+        </div>

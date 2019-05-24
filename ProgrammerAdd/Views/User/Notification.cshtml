@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Notification";
+    Layout = "~/Views/Shared/UerZoneMasterLayout.cshtml";
+}
+
+
+<div class="col-sm-12 pannel-body"style="min-height:700px;background:#baafaf;">
+        <div class="col-sm-7" style="border:1px solid;margin-top:15px;background:white;">
+             @using ProgrammerAdd.Models;
+        @{
+            ConnectionManager cm = new ConnectionManager();
+            string command = "select *from TBL_Notification";
+            System.Data.DataTable dt = cm.GetBulksRecord(command);
+            if(dt.Rows.Count>0)
+            {
+             
+                for(int i=0;i<dt.Rows.Count;i++)
+                {
+                  <p style="font-size:25px;"> @(i+1). @dt.Rows[i][1].ToString()
+                     
+                  </p>
+                   
+                }
+            }
+        }
+        </div>
+    </div>

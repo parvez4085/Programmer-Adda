@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Enquiry";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<div class="row"style="background-image:url('/Content/Logo/q.jpg');min-height:700px;">
+    <div class="col-sm-12" style=" background:rgba(8, 4, 4, 0.74); min-height:700px;">
+        <div class="col-sm-5 pannel-body cont1">
+           <form action="/Home/Enquiry"method="post"><br />
+               Name:
+               <input type="text" class="form-control" placeholder="Enter Name" name="txtname"/>
+                Mobile Number:
+               <input type="text" class="form-control" placeholder="+91 835-401+2883" name="txtmob"/><br />
+               Email Id:
+               <input type="email" class="form-control" placeholder="Plzz Enter Email Id" name="txtemail" /><br />
+                Address:
+               <input type="text" class="form-control" placeholder="Enter Address" name="txtcadd"/>
+               <input type="submit"value="Send" class="form-control" style="color:green; width:100px;"/> 
+               <br />
+             
+
+           </form>   
+            <span class="fa fa-phone">+91 835-402-1883</span>
+                Contect:3/23,Sector-j Jankipuram,<br />Kursi Rode,NearP.S. 
+            Gudamba, Gaurabagh,<br /> Lucknow, Uttar Pradesh 226021
+            <br />
+            <br />
+        </div>
+        <div class="col-sm-5"style="border:1px solid; margin:45px;min-height:500px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.427244385108!2d80.96471901463637!3d26.921666783123776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995750b309aba5%3A0x1021eb2a5d7f3f1f!2sSoftpro+House!5e0!3m2!1sen!2sin!4v1532336951125" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+

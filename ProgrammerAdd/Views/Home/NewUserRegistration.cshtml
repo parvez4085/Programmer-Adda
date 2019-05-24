@@ -1,0 +1,228 @@
+﻿@{
+    ViewBag.Title = "NewUserRegistration";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<script>
+    $(function () {
+        $("#username").hide();
+        $("#mobile").hide();
+        $("#profession").hide();
+        $("#password").hide();
+        $("cpassword").hide();
+        $("#addres").hide();
+        $("#email").hide();
+
+        var error_username = false;
+        var error_password = false;
+        var error_cpassword = false;
+        var error_mobno = false;
+        var error_pro = false;
+
+        var error_address = false;
+        var error_emailid = false;
+        $("#user").focusout(function () {
+            check_uername();
+        });
+        $("#mobno").focusout(function () {
+            check_mobno();
+        });
+        $("#pro").focusout(function () {
+            check_pro();
+        });
+        $("#form_password").focusout(function () {
+            check_password();
+        });
+        $("#form_cpass").focusout(function () {
+            check_cpassword();
+        });
+        $("#address").focusout(function () {
+            check_address();
+        });
+        $("#emailid").focusout(function () {
+            check_emailid();
+        });
+
+
+        function check_uername() {
+            var username_lenght = $("#user").val().length;
+            if (username_lenght < 2 || username_lenght > 20) {
+
+                $("#username").html("Should be between 2-20 characters");
+                $("#username").show();
+                error_user = true;
+            }
+            else {
+                $("#username").hide();
+            }
+        }
+
+        function check_mobno() {
+            var username_lenght = $("#mobno").val().length;
+            if (username_lenght != 10) {
+
+                $("#mobile").html("Mobile Number only 10 digit");
+                $("#mobile").show();
+                error_mobno = true;
+            }
+            else {
+                $("#mobile").hide();
+            }
+        }
+
+
+        function check_pro() {
+            var pro = $("#pro").val();
+            if (pro == "") {
+
+                $("#profession").html("Profession must be filled");
+                $("#profession").show();
+                error_pro = true;
+            }
+            else {
+                $("#profession").hide();
+            }
+        }
+
+        function check_password() {
+            var username_lenght = $("#form_password").val().length;
+            if (username_lenght < 8) {
+            
+                $("#password").html("At least 8 chatacters");
+                $("#password").show();
+                error_password = true;
+            }
+            else {
+                $("#password").hide();
+            }
+        }
+
+        function check_cpassword() {
+            var username_lenght = $("#form_password").val();
+            var username = $("#form_cpass").val();
+            if (username_lenght!=username) {
+           
+                $("#cpassword").html("Password don't match");
+                $("#cpassword").show();
+                error_cpassword = true;
+            }
+            else {
+                $("#cpassword").hide();
+            }
+        }
+
+        function check_address() {
+            var username_lenght = $("#address").val();
+            if (username_lenght == "") {
+                $("#addres").html("Filled address ");
+                $("#addres").show();
+                error_address = true;
+            }
+            else {
+                $("#addres").hide();
+            }
+        }
+
+        function check_emailid() {
+            var pattern = new RegExp(/^[+a-zA-Z0-9._-]+[a-zA-Z0-9.-]+\.[a-zA-z]{2,4}$/i);
+        if (pattern.test($("emailid").val())) {
+            alert("test");
+            $("#email").hide();
+
+        }
+        else {
+            $("#email").html("Invaid email address 3rd");
+            $("#email").show();
+            error_address = true;
+
+        }
+    }
+
+        $("#Registration").submit(function () {
+        
+        
+            var error_username = false;
+            var error_password = false;
+            var error_cpassword = false;
+            var error_mobno = false;
+            var error_pro = false;
+
+            var error_address = false;
+            var error_emailid = false;
+            check_uername();
+            check_mobno();
+            check_pro();
+            check_password();
+            check_cpassword();
+            check_emailid();
+            error_address();
+            if (error_username == false && error_password == false && error_cpassword == false && error_mobno == false && error_pro == false && error_address == false && error_emailid == false) {
+          
+                return true;
+            }
+            else {
+           
+                return false;
+            }
+        });
+    });
+</script>
+
+<div class="row">
+    <div class="col-sm-12"style="border-radius:5px;padding-top:10px;font-style:italic;">
+        <div class="col-sm-3"></div>
+                 <div class="col-sm-6 pannel-body Contact">
+                     
+                    <div class="row">
+                        <div class="col-sm-12 panel-body NewRegistration " style="background:#d3bdbd;">
+                            <h3 style="color:green; text-align:center;"><span class="fa fa-user"></span> New User Registration</h3>
+                            <form id="Registration" action="../Home/NewUserRegistration" method="post" enctype="multipart/form-data" onsubmit=" return validation()">
+                            <div class="col-sm-6">
+                                
+                                Name:<input type="text" class="form-control" placeholder="Enter Name*" name="txtname" id="user" autocomplete="off"/>
+                                <span id="username" class="text-danger font-weight-bold error_form" ></span><br />
+                                
+                                Mobile No:<input type="text" placeholder="+91 8354021883" id="mobno" name="txtmob"  class="form-control"  autocomplete="off"/>
+                                <span id="mobile" class="text-danger font-weight-bold error_form" ></span><br />
+                                Profession:<input type="text" class="form-control" placeholder="Enter Profession*" name="txtpro" id="pro" autocomplete="off"/>
+                                <span id="profession" class="text-danger font-weight-bold error_form" ></span><br />
+                               Password <input type="password" class="form-control" placeholder="Choose Your password*"name="txtpass" id="form_password" autocomplete="off"/>
+                                <span id="password" class="text-danger font-weight-bold error_form" ></span><br />
+                                Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="a"/>Male &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="a"/>Female<br /><br />
+                                Captcha Code<br/>
+                                <span style="font-family:Times New Roman; font-size:22px;font-style:italic; font-family:'Times New Roman'; color:blue; background-image:url('/Content/Logo/captcha.png'); padding:5px;">
+                                           @ViewBag.code
+                                  <input type="hidden" value="@ViewBag.code" name="txtccode" class="form-control" aria-readonly="true"/></span>&nbsp; &nbsp; &nbsp; <span class="fa fa-user">
+                                     </span><br/><br/>
+                               
+                                <input type="reset"value="RESET" class="btn btn-success" style="color:red;"/>
+                              
+                            </div>
+
+                            <div class="col-sm-6">
+                                  Last Name:<input type="text" class="form-control" placeholder="Enter Last Name*" name="lastadd" autocomplete="off"/><br />
+                                Current Address:<input type="text" class="form-control" placeholder="Enter Address*" name="txtcadd" id="address" autocomplete="off"/>
+                                <span id="addres" class="text-danger font-weight-bold error_form" ></span><br />
+                                E-mail Id:<input type="email" class="form-control" placeholder="info@Example.com*" name="txtemail" id="emailid" autocomplete="off"/>
+                                <span id="email" class="text-danger font-weight-bold" ></span><br />
+                               
+                               Confirm password: <input type="password" class="form-control" placeholder="same password*" name="txtcpasswd" id="form_cpass" autocomplete="off"/>
+                                <span id="cpassword" class="text-danger font-weight-bold error_form" ></span><br />
+                                Profile Picture: <input type="file" class="form-control" name="profile" id="profile"/><br />
+                          
+                                <input type="text" class="form-control"placeholder="Enter Captch Code*"name="txtcaptcha" id="captcha" autocomplete="off" required=""/>
+                                 <br />
+                                <input type="submit" value="SUBMIT" class="btn btn-success" style="color:black; text-align:center;"/>
+                            </div>
+                         </form>
+                        </div>
+                        
+                        </div>
+                        <br />
+                        <br />
+                     
+
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+    </div>

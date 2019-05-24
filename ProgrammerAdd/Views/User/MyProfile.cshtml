@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/UerZoneMasterLayout.cshtml";
+}
+
+  <script>
+        $(document).ready(function ()
+        {
+            $("#img1").click(function ()
+            {
+                $("#fufile").trigger('click');
+            });
+           
+            $("#btnedit").click(function () {
+                
+                var btn = $("#btnedit").val();
+               
+                if (btn == "Edit") {
+
+                    var name = $(".eidtprof").prop("readonly", false);
+                   
+
+                    $("#btnedit").val("UPDATE");
+                }
+                else {
+                    $("#btnedit").prop("type","submit")
+                }
+            });
+        });
+    </script>
+<div class="row">
+    
+    <div class="col-sm-2"> </div>
+    <div class="col-sm-8"style="min-height:700px;background-image:url('/Content/bgImg/Dashbordimg.JPG');">
+            <div class="row">
+                <a href="../User/Dashboard" style="color:red;text-decoration:none;"> <-- back to Dashboad</a>
+                <div class="col-sm-12" style="border-radius:15px 0px 0px 0px; min-height:400px;margin:0px auto;
+                    padding-top:50px; font-size:20px;">
+
+                   <form action="/User/MyProfile" method="post" enctype="multipart/form-data">
+                     <div class="col-sm-8">
+                     
+                  Name:      
+                  <input class=" form-control eidtprof" type="text" value= "@ViewBag.name" name="txtname" readonly="true"/><br />
+                   LastName:
+                  <input class=" form-control eidtprof" type="text" value= "@ViewBag.lname" name="txtname" readonly="true"/><br />
+                Mobile Number:
+                <input type="number"class=" form-control eidtprof" value="@ViewBag.mob" name="txtmob" readonly="true" /><br />
+                 Email Id:
+                <input type="email"class=" form-control eidtprof" value="@ViewBag.email" name="txtemail" readonly="true"/><br />
+                 Adress:
+                <input type="text"class=" form-control eidtprof" value= "@ViewBag.currentadd" name="txtadd" readonly="true"/><br />
+                         Profession:
+               <input class=" form-control eidtprof" type="text" value= "@ViewBag.profession" name="txtname" readonly="true"/><br />
+
+                <input type="button" value="Edit" id="btnedit"  class="btn btn-success"/>
+            
+                        
+                        </div>
+                    <div class="col-sm-4">
+
+                        <img id="imgProfile" src="@ViewBag.pic" height="100px" width="130px"/>
+                    
+                    <img id="img1" src="../Content/Logo/Camara.png" height="50px"width="50px" style="position:absolute;right:380px;top:80px;
+                       cursor:pointer;display:none;" title="Select Your Profile" />
+                    <input type="file" id="fufile " name="fuprofile" style="display:none;" />
+                        
+                    </div>
+                    </form>
+                </div>
+               </div>
+            </div>
+    <div class="col-sm-2"></div>
+
+</div>

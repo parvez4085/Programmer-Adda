@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/hover-min.css" rel="stylesheet" />
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <link href="~/Content/MainPage.css" rel="stylesheet" />
+
+    <script>
+function changeImage(im)
+{
+    document.getElementById("image1").src=im.src;
+    im.style="cursor:pointer";
+    im.title="put mouse image and display into div";
+}
+    </script>
+    <style>
+
+         .Header a{
+            color:white;
+            text-decoration:none;
+        }
+        .Contact span {
+            font-size:15px;
+        }
+    </style>
+ 
+</head>
+<body>
+    <div class="container-fuide">
+        <div class="row">
+            <div class="row">
+            <div class="col-sm-12 Header">
+                 <a href="#"><span class="fa fa-facebook"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a href="#"><span class="fa fa-youtube"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a href="#"><span class="fa fa-twitter"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a href="#"><span class="fa fa-instagram"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+        
+        </div>
+        <div class="row">
+            <div class="col-sm-12 Menu">
+
+                 <div class="col-sm-5" style="font-size:25px;font-weight:bold;"> 
+                    <img src="~/Content/Logo/logo4.PNG" hieght="100px" width="100px"/>
+                   <span style="color:#ff0046;">P</span>
+                    <span style="color:yellow;">R</span>
+                    <span style="color:red;">O</span>
+                    <span style="color:green;">G</span>
+                    <span style="color:black;">R</span>
+                    <span style="color:#0026ff;">A</span>
+                    <span style="color:green;">M</span>
+                    <span style="color:yellowgreen;">M</span>
+                    <span style="color:lightblue;">E</span>
+                    <span style="color:green;">R</span>
+                     <span>ADDA</span>
+
+                </div>
+                 <!--- Hear Menu Code Strat-->
+                <div class="col-sm-7 Menu1">
+                    <nav class="navbar navbar-default">
+                     <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                         <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>
+                         </button>
+                          <a class="navbar-brand" href="../Home/Index"><span class="fa fa-home"></span>  Home</a>
+                       </div>
+
+                   <!-- Collect the nav links, forms, and other content for toggling -->
+                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                     <ul class="nav navbar-nav">
+                      <li><a href="../Home/OurObjective">Our Objective </a></li>
+                     <li><a href="../Home/Enquiry">Enquiry</a></li>
+                         <li><a href="../Home/ImageGallery">Image Gallery</a></li>
+                         <li><a href="../Home/NewUserRegistration">New User Registration</a></li>
+                         <li><a href="../Home/Login"><span class="fa fa-user"></span>  Login</a></li>
+                         
+                   </ul>
+       
+      
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+      </nav>
+   </div>
+
+         </div>
+                 <!--- Hear Menu Code End-->
+        </div>
+        <div class="row">
+            <div class="col-sm-12 Content">
+                @RenderBody()
+            </div>
+        </div>
+         <!-- Code for Footer -->
+        <div class="row">
+            <div class="col-sm-12 Footer">
+                <hr />
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 Footer-in" ">
+                    <div class="row">
+                       <div class="col-sm-3">
+                         <h4>Tutorials</h4>
+                    ..........................................
+                           <br />
+
+                    <a href="#">Core Java Tutorial</a> <br /> 
+                    <a href="#">Jdbc Tutorial</a><br />
+                    <a href="#">Servlet Tutorial</a><br />
+                    <a href="#">Jsp Tutorial</a><br />
+
+
+
+                </div> 
+                <div class="col-sm-3">
+                      <h4>Interview Question</h4>
+                    ..........................................
+                           <br />                                                 
+
+                    <a href="#">Java Interview</a> <br /> 
+                    <a href="#">C Interview</a><br />
+                    <a href="#">Php Interview</a><br />
+                    <a href="#">Html Interview</a><br />
+                    <a href="#">.Net Interview</a><br />
+                    <a href="#">HR Interview</a><br />
+
+                </div>
+                <div class="col-sm-3">
+                      <h4>Online Test</h4>
+                    ..........................................                         
+                       <br />
+
+                    <a href="#">Core Java Test</a> <br /> 
+                    <a href="#">Jdbc Test</a><br />
+                    <a href="#">Servlet Test</a><br />
+                    <a href="#">Jsp Test</a><br />
+                    <a href="#">Php Test</a> <br /> 
+                    <a href="#">C Test</a><br />
+                    <a href="#">C# Test</a><br />
+                    <a href="#">Asp Test</a><br />
+                    <a href="#">Html Test</a><br />
+                    <a href="#">Javascript & Jquery Test</a><br />
+                    <a href="#">Aptitude Test</a><br />
+
+                </div>
+                <div class="col-sm-3">
+                      <h4> Other Links</h4>
+                    ..........................................               
+                           <br />
+
+                    <a href="#">Get Test Result</a> <br /> 
+                    <a href="#">Download Software</a><br />
+                    <a href="#">Download Books</a><br />
+                    <a href="#">Java Posts</a><br />
+                    <a href="#">Interview Questions</a><br />
+                    <a href="#">About Us</a><br />
+
+
+                </div>
+                  </div>
+               </div>
+              <div class="col-sm-2"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 Footer2">
+                Copyright &copy;2019.All Rights Reserved Contect
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
